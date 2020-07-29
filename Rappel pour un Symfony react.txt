@@ -1,0 +1,34 @@
+creer un nouveau projet symfony
+
+symfony new NouveauProjet --full
+
+aller dans NouveauProjet et faire
+
+composer require api
+
+Ensuite creer toutes les entities
+
+faire les @ApiResource(
+ *      normalizationContext={"groups"={"seance:read"}},
+ *      denormalizationContext={"groups"={"seance:write"}}
+ * )
+
+dans les différentes entity
+
+et les
+ /**
+ * @ORM\Column(type="string", length=50)
+ * @Groups({"film:read","seance:read"})
+ */
+private $titre;
+par exemple
+
+ne pas oublier de faire le use : use Symfony\Component\Serializer\Annotation\Groups;
+
+
+puis creer une app react en creant un fichier :
+
+npx create-react-app mon-app-mika  (mon-app-mika etant le nom du fichier)
+
+
+
